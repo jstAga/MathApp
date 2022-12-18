@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MathApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="elementary_math">Elementary Math</string>
+    <string name="math_description"><![CDATA[Classroom topics like multipllication & fractions]]></string>
+    <string name="equals">=</string>
+    <string name="operation">+</string>
+    <string name="check">check</string>
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/progressBar"
+        app:layout_constraintEnd_toStartOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/progressBar" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:max="1000"
+        android:progress="0"
+        android:progressDrawable="@drawable/bg_progressbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <SeekBar-->
+    <!--        android:id="@+id/seekBar2"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:max="4"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        android:theme="@style/Widget.AppCompat.SeekBar.Discrete"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/btn_check" />-->
+
+    <LinearLayout
+        android:id="@+id/container_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_first_num"
+            style="@style/Answer.TextView"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_operation"
+            style="@style/Answer.TextView"
+            android:layout_marginStart="20dp"
+            android:text="@string/operation"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/tv_second_num"
+            style="@style/Answer.TextView"
+            android:layout_marginHorizontal="20dp"
+            android:text="0"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/Answer.TextView"
+            android:layout_marginEnd="20dp"
+            android:text="@string/equals"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/tv_answer"
+            style="@style/Answer.TextView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_equals"
+            android:gravity="center"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/container_answers"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/btn_check"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/container_question">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_pick_answer1"-->
+    <!--            style="@style/Answer.TextView"-->
+    <!--            android:text="0"-->
+    <!--            android:textColor="@color/gray" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_pick_answer2"-->
+    <!--            style="@style/Answer.TextView"-->
+    <!--            android:layout_marginHorizontal="40dp"-->
+    <!--            android:text="0"-->
+    <!--            android:textColor="@color/gray" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_pick_answer3"-->
+    <!--            style="@style/Answer.TextView"-->
+    <!--            android:text="0"-->
+    <!--            android:textColor="@color/gray" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_pick_answer4"-->
+    <!--            style="@style/Answer.TextView"-->
+    <!--            android:layout_marginHorizontal="40dp"-->
+    <!--            android:text="0"-->
+    <!--            android:textColor="@color/gray" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_pick_answer5"-->
+    <!--            style="@style/Answer.TextView"-->
+    <!--            android:text="0"-->
+    <!--            android:textColor="@color/gray" />-->
+    <!--    </LinearLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/btn_check"
+        app:layout_constraintTop_toBottomOf="@id/container_question"
+        app:spanCount="5"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_answer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/light_gray"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:text="@string/check"
+        android:textAllCaps="true"
+        android:textColor="@color/gray"
+        android:textSize="30sp"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
